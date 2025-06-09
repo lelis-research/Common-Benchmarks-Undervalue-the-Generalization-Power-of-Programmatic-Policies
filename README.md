@@ -2,7 +2,7 @@
 
 This is the implementation for "Common Benchmarks Undervalue the Generalization Power of Programmatic Policies" paper. For more info visit [project page](). This repository serves as an umbrella for all code implementations and experimental results related to our research. The work is organized into four dedicated submodules, each focusing on a specific environment or set of experiments:
 
-- [SparsePolicies](https://github.com/lelis-research/Sparse-Policies/tree/1bfe202b33ecd7b45f1620915f7a7f66fc9ed92f): Core implementations and experiments related to `Karel`, `SparseMaze`, `Cartpole`, `Quad`, and `ParallelPark` environments.
+- [SparsePolicies](https://github.com/lelis-research/Sparse-Policies/tree/fd8a2c4d100822200d1d3766f0c973ec0d460fe9): Core implementations and experiments related to `Karel`, `SparseMaze`, `Cartpole`, `Quad`, and `ParallelPark` environments.
 - [SparsePolicies_Torcs](https://github.com/Amirhossein-Rajabpour/myTORCS-docker/tree/9114844bdc0c1cfdcfe7f4e3117b66b99225d66b): Experiments related to the [`Torcs`](https://sourceforge.net/projects/torcs/) environment. This repository uses a Dockerized version (also Apptainer for Compute Canada) of the Torcs server.
 - [SparsePolicies_ParallelPark](https://github.com/lelis-research/neurips-2025-paper-neural-decomposition/tree/fa8e7d7fa9975431149a4d000dc11f7ee6d0aee7): Additional experiments for the `ParallelPark` environment.
 - [FunSearch](https://github.com/Amirhossein-Rajabpour/Funsearch/tree/fe236f0132d1fa5aee47a935998438c11b298611): Using [this approach](https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) for finding programmatic policies for the `SparseMaze` environment.
