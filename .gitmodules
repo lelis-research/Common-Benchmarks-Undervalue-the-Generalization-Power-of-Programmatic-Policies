@@ -1,0 +1,13 @@
+[submodule "FunSearch"]
+	path = FunSearch
+	url = https://github.com/Amirhossein-Rajabpour/Funsearch.git
+[submodule "SparsePolicies"]
+	path = SparsePolicies
+	url = https://github.com/lelis-research/Sparse-Policies
+[submodule "SparsePolicies_Torcs"]
+	path = SparsePolicies_Torcs
+	url = https://github.com/Amirhossein-Rajabpour/myTORCS-docker.git
+[submodule "SparsePolicies_ParallelPark"]
+	path = SparsePolicies_ParallelPark
+	url = https://github.com/lelis-research/neurips-2025-paper-neural-decomposition.git
+	branch = continuous
