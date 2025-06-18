@@ -22,9 +22,24 @@ git submodule update --init --recursive
 Each submodule can then be accessed and run according to its own documentation and setup instructions.
 
 
+ <br>
+
+ ### Cite the paper
+ ```
+ @misc{rajabpour2025commonbenchmarksundervaluegeneralization,
+      title={Common Benchmarks Undervalue the Generalization Power of Programmatic Policies}, 
+      author={Amirhossein Rajabpour and Kiarash Aghakasiri and Sandra Zilles and Levi H. S. Lelis},
+      year={2025},
+      eprint={2506.14162},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2506.14162}, 
+}
+ ```
 
 <br>
 
  ### Authors
  [Amirhossein Rajabpour](http://amirhossein-rajabpour.github.io/), [Kiarash Aghakasiri](https://scholar.google.co.uk/citations?user=UsE3he0AAAAJ&hl=en), [Sandra Zilles](https://www2.cs.uregina.ca/~zilles/), [Levi Lelis](https://webdocs.cs.ualberta.ca/~santanad/) 
+
  

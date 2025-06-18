@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- MathJax v3 -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  <title>Common Benchmarks Undervalue the Generalization Power of Programmatic Policies</title>
+  <style>
+    /* Base styling */
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+    /* Header */
+    h1, section h2, section h3 { text-align: center; color: #333; }
+    h1 { font-size: 2em; margin-bottom: 10px; }
+    .authors { text-align: center; margin-bottom: 10px; }
+    .authors a { color: #333; text-decoration: none; margin: 0 5px; }
+    .affiliations { text-align: center; color: #555; margin-bottom: 5px; }
+    .affiliations a { color: #0077cc; text-decoration: none; margin: 0 5px; }
+    .links { text-align: center; margin-bottom: 30px; }
+    .links a { color: #0077cc; text-decoration: none; margin: 0 10px; font-weight: bold; }
+
+    /* Divider */
+    .divider { border-top: 1px solid #e0e0e0; margin: 30px 0; }
+
+    /* Sections */
+    section { margin-bottom: 50px; }
+    section p { color: #555; margin-bottom: 20px; }
+
+    /* Figures & Captions inside flex containers */
+    .videos-container, .images-container { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+    .videos-container figure, .images-container figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 45%;
+      margin: 0;
+    }
+    .videos-container figure video, .images-container figure img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    figcaption { text-align: center; font-size: 0.9em; color: #777; margin-top: 5px; }
+
+    /* Single media centering */
+    figure.single { max-width: 100%; margin: 0 auto 30px; }
+    figure.single video { max-width: 80%; display: block; margin: 0 auto; }
+
+    /* Tables & single images */
+    figure.table-figure { margin: 20px auto; max-width: 700px; }
+    figure.table-figure img { width: 90%; height: auto; display: block; margin: 0 auto; }
+
+    /* Citation section */
+    .citation-section { margin-top: 40px; }
+    .citation-block {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      padding: 15px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9em;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Common Benchmarks Undervalue the Generalization Power of Programmatic Policies</h1>
+    <div class="authors">
+      <a href="https://amirhossein-rajabpour.github.io/">Amirhossein Rajabpour</a>,
+      <a href="https://scholar.google.co.uk/citations?user=UsE3he0AAAAJ&hl=en">Kiarash Aghakasiri</a>,
+      <a href="https://www2.cs.uregina.ca/~zilles/">Sandra Zilles</a>,
+      <a href="https://webdocs.cs.ualberta.ca/~santanad/">Levi H. S. Lelis</a>
+    </div>
+    <div class="affiliations">
+      <a href="https://www.ualberta.ca">University of Alberta</a> &
+      <a href="https://www.amii.ca">Amii</a>
+    </div>
+    <div class="links">
+      <a href="https://arxiv.org/abs/2506.14162">[Paper]</a>
+      <a href="https://github.com/lelis-research/Common-Benchmarks-Undervalue-the-Generalization-Power-of-Programmatic-Policies">[Code]</a>
+    </div>
+    <div class="divider"></div>
+    <section>
+      <h2>Overview</h2>
+      <p>We argue that commonly used benchmarks underestimate the out-of-distribution (OOD) generalization capabilities of programmatic policies. By controlling input sparsity and reward functions, we show neural networks can match or exceed programmatic policies on standard benchmarks,
+         and we propose new tasks that highlight scenarios where symbolic representations are advantageous. In the context of OOD generalization, we argue that programmatic representations should be used in problems that require computational constructs that neural models have difficulty learning, such as stacks and queues.</p>
+    </section>
+    <section>
+      <h2>TORCS Results</h2>
+      <p>For The Open Car Racing Simulator (TORCS) we show that using a more cautious reward function slows down the agent, enabling better generalization results.</p>
+      <figure class="table-figure">
+        <img src="docs/torcs_results.png" alt="TORCS Results Table" style="max-width:90%; display:block; margin:0 auto;">
+      </figure>
+      <h3>Training Track Performance</h3>
+      <figure class="single">
+        <video controls loop>
+          <source src="docs/gtrack1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Agent on G-TRACK-1 training environment</figcaption>
+      </figure>
+      <h3>Generalization Comparison</h3>
+      <div class="videos-container">
+        <figure>
+          <video controls loop>
+            <source src="docs/eroad_generalize.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Successful generalization on E-ROAD using cautious reward function</figcaption>
+        </figure>
+        <figure>
+          <video controls loop>
+            <source src="docs/eroad_not_generalize.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Crash under original reward on E-ROAD</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <h2>Karel Results</h2>
+      <p>Using sparse observation and augmenting observations with the previous action allows fully-connected policies to generalize to larger grids (100×100), outperforming convolutional and LSTM baselines that fail to scale and perform better than <a href="https://clvrai.github.io/leaps/">LEAPS</a>.</p>
+      <figure class="table-figure">
+        <img src="docs/karel_results.png" alt="Karel Results Table">
+      </figure>
+      <div class="videos-container">
+        <figure>
+          <video controls loop>
+            <source src="docs/trajectory_stair_climber_W12.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+           <figcaption>
+                PPO with \(a_{t-1}\) on \(12\times 12\) grid
+           </figcaption>
+        </figure>
+        <figure>
+          <video controls loop>
+            <source src="docs/trajectory_stair_climber_W100.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+           <figcaption>
+                PPO with \(a_{t-1}\) on \(100\times 100\) grid
+           </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <h2>Proposed Benchmark</h2>
+      <p>We introduce a SPARSE MAZE task, which has wider corridors than normal MAZE, requiring explicit memory (stacks or queues) to find shortest paths. Neural policies struggle, while programmatic search synthesizes an optimal BFS solution. We used <a href="https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/">FunSearch</a> for generating programmatic policies for this section.</p>
+      <figure>
+        <img src="docs/funsearch_results.png" alt="Funsearch Results" style="max-width:650px; display:block; margin: 0 auto;">
+      </figure>
+      <div class="images-container">
+        <figure>
+          <img src="docs/maze_20.png" alt="Maze 20x20">
+          <figcaption>Standard KAREL MAZE layout</figcaption>
+        </figure>
+        <figure>
+          <img src="docs/widemaze_20.png" alt="Wide Maze 20x20">
+          <figcaption>SPARSE MAZE layout</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+    
+    <!-- Added citation section -->
+    <section class="citation-section">
+      <h2>Citation</h2>
+      <div class="citation-block">
+          @misc{rajabpour2025commonbenchmarksundervaluegeneralization,
+                title={Common Benchmarks Undervalue the Generalization Power of Programmatic Policies}, 
+                author={Amirhossein Rajabpour and Kiarash Aghakasiri and Sandra Zilles and Levi H. S. Lelis},
+                year={2025},
+                eprint={2506.14162},
+                archivePrefix={arXiv},
+                primaryClass={cs.LG},
+                url={https://arxiv.org/abs/2506.14162}, 
+          }
+      </div>
+    </section>
+  </div>
+</body>
+</html>
